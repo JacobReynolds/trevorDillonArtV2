@@ -1,0 +1,16 @@
+link(rel="stylesheet" href="/stylesheets/edit.css")
+
+a#back(href="/", type="button") back
+
+div#uploadForm
+    form(action="/upload", method="post", enctype="multipart/form-data")
+        input(type="file", name="displayImage",  multiple="multiple", accept="image/*")
+        button(type="submit") submit
+
+section#photos
+    each image, i in images
+        div#advancedImageContainer
+            img(src="images/portfolio/#{image}")
+            form#formAddUser(name="removeimage",method="post",action="/removeimage")
+                input#removeImage(type="text", placeholder="image", name="imageId", value="#{image}", style="display: none")
+                button#btnSubmit(type="submit") remove

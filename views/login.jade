@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    form#formAddUser(name="attemptLogin",method="post",action="/attemptLogin")
+        input#password(type="password", name="password")
+        button#btnSubmit(type="submit") submit

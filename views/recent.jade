@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  body
+    div#recentWrapper
+        div.nav.nav-htx
+            div.htx-wrapper
+                span
+                ul#navOptions
+                    li(onclick="window.location.href='/'") home
+                    li(onclick="window.location.href='/portfolio'") portfolio
+                    li(onclick="window.location.href='/about'") about me
+        section#photos
+  script(src='/javascripts/recent.js')

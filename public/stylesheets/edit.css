@@ -1,0 +1,103 @@
+html,
+body {
+    background: gray;
+    margin: 0;
+    padding: 0;
+}
+#advancedImageContainer {
+    height: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#advancedImageContainer button {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: black;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: all .3s ease;
+}
+#advancedImageContainer button:hover {
+    background: white;
+    color: black;
+}
+#advancedImageContainer button:focus {
+    outline: 0;
+}
+#uploadForm form {
+    background: gray;
+    width: 50vw;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#back {
+    position: relative;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    height: 30px;
+    width: 40px;
+    background: black;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 10px;
+    left: 10px;
+    top: 10px;
+    transition: all .2s ease;
+}
+#back:hover {
+    background: white;
+    color: black;
+}
+#photos {
+    /* Prevent vertical gaps */
+    line-height: 0;
+    -webkit-column-count: 5;
+    -webkit-column-gap: 10px;
+    -moz-column-count: 5;
+    -moz-column-gap: 0px;
+    column-count: 5;
+    column-gap: 10px;
+}
+#photos img {
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+}
+@media (max-width: 1200px) {
+    #photos {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+@media (max-width: 1000px) {
+    #photos {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+@media (max-width: 800px) {
+    #photos {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+@media (max-width: 400px) {
+    #photos {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
