@@ -1,17 +1,9 @@
 /*Global Start*/
 
-html {
-    margin: 0px;
-    padding: 0px;
-}
+html,
 body {
     margin: 0px;
     padding: 0px;
-    background: url(/images/background.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 }
 
 /*Global End*/
@@ -145,14 +137,28 @@ body {
 /* Welcome Page Start*/
 
 #welcomeWrapper {
-    background: rgba(0, 0, 0, .5);
     height: 100vh;
     width: 100vw;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background: url(/images/background-min.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#welcomeWrapper:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
 }
 #welcomeWrapper .header {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
     font-size: 48px;
     margin: 0px;
     padding: 0px;
