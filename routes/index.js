@@ -16,6 +16,27 @@ router.get('/sloths', function (req, res) {
     if (!loggedIn) {
         res.redirect('login');
     } else {
+        try {
+            fs.readdir(portfolioPath, function (err, result) {
+                if (err) {
+                    return console.error(err);
+                } else {
+                    res.render('sloths', {
+                        'images': result
+                    })
+                }
+            })
+        } catch (e) {
+            console.log('Portoflio not found: ' + e);
+            res.render('sloths', {
+                'images': []
+            })
+        }
+    }
+});
+
+router.get('/portfolio', function (req, res) {
+    try {
         fs.readdir(portfolioPath, function (err, result) {
             if (err) {
                 return console.error(err);
@@ -25,19 +46,12 @@ router.get('/sloths', function (req, res) {
                 })
             }
         })
+    } catch (e) {
+        console.log('Portoflio not found: ' + e);
+        res.render('sloths', {
+            'images': []
+        })
     }
-});
-
-router.get('/portfolio', function (req, res) {
-    fs.readdir(portfolioPath, function (err, result) {
-        if (err) {
-            return console.error(err);
-        } else {
-            res.render('portfolio', {
-                'images': result
-            })
-        }
-    })
 });
 
 router.get('/recent', function (req, res) {
