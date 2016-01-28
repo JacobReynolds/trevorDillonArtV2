@@ -12,46 +12,36 @@ router.get('/', function (req, res) {
     res.render('index');
 });
 
+if (!fs.existsSync(portfolioPath)) {
+    fs.mkdirSync(portfolioPath);
+}
+
 router.get('/sloths', function (req, res) {
     if (!loggedIn) {
         res.redirect('login');
     } else {
-        try {
-            fs.readdir(portfolioPath, function (err, result) {
-                if (err) {
-                    return console.error(err);
-                } else {
-                    res.render('sloths', {
-                        'images': result
-                    })
-                }
-            })
-        } catch (e) {
-            console.log('Portoflio not found: ' + e);
+        fs.readdir(portfolioPath, function (err, result) {
+            if (err) {
+                console.error(err);
+                result = [];
+            }
             res.render('sloths', {
-                'images': []
+                'images': result
             })
-        }
+        })
     }
 });
 
 router.get('/portfolio', function (req, res) {
-    try {
-        fs.readdir(portfolioPath, function (err, result) {
-            if (err) {
-                return console.error(err);
-            } else {
-                res.render('sloths', {
-                    'images': result
-                })
-            }
+    fs.readdir(portfolioPath, function (err, result) {
+        if (err) {
+            console.error(err);
+            result = [];
+        }
+        res.render('portfolio', {
+            'images': result
         })
-    } catch (e) {
-        console.log('Portoflio not found: ' + e);
-        res.render('sloths', {
-            'images': []
-        })
-    }
+    })
 });
 
 router.get('/recent', function (req, res) {
@@ -96,7 +86,7 @@ router.post('/upload', function (req, res) {
     on('end', function () {
         res.redirect('back');
     });
-    form.parse(req);
+    form.parse(req)
 })
 
 router.post('/removeimage', function (req, res) {
