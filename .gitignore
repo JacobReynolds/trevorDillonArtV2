@@ -1,2 +1,4 @@
 node_modules
 .openshift
+npm-debug.log
+
