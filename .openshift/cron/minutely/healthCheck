@@ -1,8 +1,0 @@
-#!/bin/bash
-
-STATUS=$(ps -e|grep node)
-
-if [ -z "$STATUS" ]
-then
-    node ${OPENSHIFT_REPO_DIR}/sendEmail.js
-fi
