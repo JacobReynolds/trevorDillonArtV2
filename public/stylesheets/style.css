@@ -212,6 +212,33 @@ body {
     width: 100% !important;
     height: auto !important;
 }
+
+/*Portfolio Page End*/
+
+
+/*Recent Page End*/
+
+#recentWrapper .nav {
+    top: 0;
+    z-index: 10;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+#recentWrapper #navOptions {
+    top: 100px;
+}
+
+/*Recent Page End*/
+
+
+/*Media Queries Start*/
+
+@media (max-width: 2000px) {
+    #welcomeWrapper {
+        background: url('../images/background-min1980.jpg');
+    }
+}
 @media (max-width: 1200px) {
     #photos {
         -moz-column-count: 3;
@@ -234,20 +261,4 @@ body {
     }
 }
 
-/*Portfolio Page End*/
-
-
-/*Recent Page End*/
-
-#recentWrapper .nav {
-    top: 0;
-    z-index: 10;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-}
-#recentWrapper #navOptions {
-    top: 100px;
-}
-
-/*Recent Page End*/
+/*Media Queries End*/

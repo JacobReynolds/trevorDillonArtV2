@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#retry count of ping request
+RETRYCOUNT=1;
+
+#pingServer: implement ping server functionality. 
+#Param1: server hostname to ping
+function pingServer {
+  #echo Checking server: $1
+  ping -c $RETRYCOUNT $1 > /dev/null 2>&1
+  if [ $? -ne 0 ]
+  then
+    echo $1 down
+  else
+    echo $1 live
+  fi
+}
