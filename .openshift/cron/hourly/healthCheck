@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STATUS=$(ps -e|grep npm)
+STATUS=$(ps -e|grep node)
 
 if [ -z "$STATUS" ]
 then
