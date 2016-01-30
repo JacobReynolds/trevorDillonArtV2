@@ -5,4 +5,7 @@ STATUS=$(ps -e|grep node)
 if [ -z "$STATUS" ]
 then
     node ${OPENSHIFT_REPO_DIR}/sendEmail.js
+    "sent email, server down" >> ${OPENSHIFT_LOG_DIR}/healthCheck.log
+else
+    "server up" >> ${OPENSHIFT_LOG_DIR}/healthCheck.log
 fi
