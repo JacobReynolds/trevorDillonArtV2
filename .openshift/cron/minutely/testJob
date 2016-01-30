@@ -1,3 +1,0 @@
-#! /bin/bash
-
-echo "job ran" >> ${OPENSHIFT_LOG_DIR}/test.log

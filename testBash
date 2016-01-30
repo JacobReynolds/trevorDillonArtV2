@@ -1,7 +1,0 @@
-#!/bin/bash
-
-ping -c 3 ${OPENSHIFT_APP_DNS} > /dev/null 2>&1
-if [ $? -ne 0 ]
-then
-   echo "test"
-fi
