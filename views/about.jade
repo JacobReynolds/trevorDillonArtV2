@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  body
+    div.nav
+        ul#navOptions
+            li(onclick="window.location.href='/'") home
+            li(onclick="window.location.href='/about'") about me
+            li(onclick="window.location.href='/recent'") recent
+    div#aboutWrapper
+        h1 About me

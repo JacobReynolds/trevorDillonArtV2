@@ -48,6 +48,10 @@ router.get('/recent', function (req, res) {
     res.render('recent')
 });
 
+router.get('/about', function (req, res) {
+    res.render('about')
+});
+
 router.get('/getPortfolio', function (req, res) {
     fs.readdir(portfolioPath, function (err, result) {
         if (err) {

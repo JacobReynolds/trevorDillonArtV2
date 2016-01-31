@@ -3,11 +3,10 @@ extends layout
 block content
   body
     div#welcomeWrapper
-        span#header.header Trevor Dillon
-        span#subHeader.header Artist
-        div.nav.nav-htx
-            div.htx-wrapper
-                span
+        div#header
+            span#title Trevor Dillon
+            span#subHeader Artist
+        div.nav
             ul#navOptions
                 li(onclick="window.location.href='/portfolio'") portfolio
                 li(onclick="window.location.href='/about'") about me

@@ -3,13 +3,11 @@ extends layout
 block content
   body
     div#portfolioWrapper
-        div.nav.nav-htx
-          div.htx-wrapper
-              span
-              ul#navOptions
-                  li(onclick="window.location.href='/'") home
-                  li(onclick="window.location.href='/about'") about me
-                  li(onclick="window.location.href='/recent'") recent
+        div.nav
+            ul#navOptions
+                li(onclick="window.location.href='/'") home
+                li(onclick="window.location.href='/about'") about me
+                li(onclick="window.location.href='/recent'") recent
         section#photos
             each image, i in images
                 div#advancedImageContainer
