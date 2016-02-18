@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var fs = require('fs');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -62,27 +63,27 @@ app.use(function (err, req, res, next) {
 
 
 // Set up pinging so app does not go to sleep
-setInterval(function() {
-fs.writeFile(process.env.OPENSHIFT_LOG_DIR + "ping.log", "pinging site at: " + process.env.OPENSHIFT_APP_DNS, function(err) {
-    if(err) {
-        return console.log(err);
-    }
-}); 
+setInterval(function () {
+    fs.writeFile(process.env.OPENSHIFT_LOG_DIR + "ping.log", "pinging site at: " + process.env.OPENSHIFT_APP_DNS, function (err) {
+        if (err) {
+            return console.log(err);
+        }
+    });
     http.get(process.env.OPENSHIFT_APP_DNS);
 }, 300000);
 
-fs.writeFile(process.env.OPENSHIFT_LOG_DIR + "ping.log", "pinging site at: " + $
-    if(err) {
+fs.writeFile(process.env.OPENSHIFT_LOG_DIR + "ping.log", "pinging site at: " + process.env.OPENSHIFT_APP_DNS, function (err) {
+    if (err) {
         return console.log(err);
     }
-}); 
-    http.get(process.env.OPENSHIFT_APP_DNS);
+});
+http.get(process.env.OPENSHIFT_APP_DNS);
 
 
 
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 app.listen(port, ip);
 
