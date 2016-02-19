@@ -1,0 +1,2 @@
+ping -w 1 ${OPENSHIFT_APP_DNS}
+
