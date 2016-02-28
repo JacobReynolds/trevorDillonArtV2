@@ -5,7 +5,7 @@ var util = require('util');
 var formidable = require('formidable');
 var loggedIn = false;
 //Temp password until prod release
-var password = 'password';
+var password = process.env.LOGIN_PASSWORD;
 var portfolioPath = 'public/images/portfolio/';
 /* GET home page. */
 router.get('/', function (req, res) {
