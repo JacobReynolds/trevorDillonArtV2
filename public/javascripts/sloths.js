@@ -13,7 +13,6 @@ function updateImageOrder() {
     var images = $('.editImage').get().map(function (element) {
         return element.id;
     })
-    var test = JSON.stringify(images);
     $.post({
         url: '/updateImageOrder',
         data: JSON.stringify(images),

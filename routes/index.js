@@ -113,7 +113,6 @@ router.post('/updateImageOrder', function (req, res) {
         var name = portfolioPath;
         var uuid = new Date().getTime();
         for (var i = 0; i < images.length; i++) {
-            console.log(uuid);
             fs.rename(portfolioPath + images[i], name + uuid++, function (err) {
                 if (err) throw err;
             });
