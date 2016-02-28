@@ -78,31 +78,49 @@ router.post('/attemptLogin', function (req, res) {
 })
 
 router.post('/upload', function (req, res) {
-    var form = new formidable.IncomingForm();
+    if (loggedIn) {
+        var form = new formidable.IncomingForm();
 
-    form.uploadDir = portfolioPath;
+        form.uploadDir = portfolioPath;
 
-    form.
-    on('file', function (field, file) {
-        //rename the incoming file to the file's name
-        fs.rename(file.path, form.uploadDir + "/" + file.name);
-    }).
-    on('end', function () {
-        res.redirect('back');
-    });
-    form.parse(req)
+        form.
+        on('file', function (field, file) {
+            //rename the incoming file to the file's name
+            fs.rename(file.path, form.uploadDir + "/" + file.name);
+        }).
+        on('end', function () {
+            res.redirect('back');
+        });
+        form.parse(req)
+    }
 })
 
 router.post('/removeimage', function (req, res) {
-
-    fs.unlink(portfolioPath + req.body.imageId, function (err) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.redirect('back');
-        }
-    });
+    if (loggedIn) {
+        fs.unlink(portfolioPath + req.body.imageId, function (err) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect('back');
+            }
+        });
+    }
 });
+
+router.post('/updateImageOrder', function (req, res) {
+    if (loggedIn) {
+        var images = req.body;
+        var name = portfolioPath;
+        var uuid = new Date().getTime();
+        for (var i = 0; i < images.length; i++) {
+            console.log(uuid);
+            fs.rename(portfolioPath + images[i], name + uuid++, function (err) {
+                if (err) throw err;
+            });
+        }
+        res.redirect('back');
+    }
+})
 
 module.exports = router;
 

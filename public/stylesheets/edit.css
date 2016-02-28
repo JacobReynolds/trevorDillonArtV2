@@ -4,14 +4,17 @@ body {
     margin: 0;
     padding: 0;
 }
-#advancedImageContainer {
-    height: auto;
+#editImageContainer {
     position: relative;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
 }
-#advancedImageContainer button {
+#editImageContainer button {
     position: absolute;
     bottom: 5px;
     left: 5px;
@@ -22,16 +25,19 @@ body {
     border-radius: 10px;
     transition: all .3s ease;
 }
-#advancedImageContainer button:hover {
+#editImageContainer img {
+    width: 200px;
+}
+#editImageContainer button:hover {
     background: white;
     color: black;
 }
-#advancedImageContainer button:focus {
+#editImageContainer button:focus {
     outline: 0;
 }
-#uploadForm form {
+#uploadForm {
     background: gray;
-    width: 50vw;
+    width: 400px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -59,45 +65,15 @@ body {
     color: black;
 }
 #photos {
-    /* Prevent vertical gaps */
-    line-height: 0;
-    -webkit-column-count: 5;
-    -webkit-column-gap: 10px;
-    -moz-column-count: 5;
-    -moz-column-gap: 0px;
-    column-count: 5;
-    column-gap: 10px;
+    text-align: center;
 }
-#photos img {
-    /* Just in case there are inline attributes */
-    width: 100% !important;
-    height: auto !important;
+#removeImage {
+    position: absolute;
+    margin: 0px !important;
 }
-@media (max-width: 1200px) {
-    #photos {
-        -moz-column-count: 4;
-        -webkit-column-count: 4;
-        column-count: 4;
-    }
-}
-@media (max-width: 1000px) {
-    #photos {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
-    }
-}
-@media (max-width: 800px) {
-    #photos {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-}
-@media (max-width: 400px) {
-    #photos {
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        column-count: 1;
-    }
+.ui-sortable-placeholder {
+    border: 3px dashed #aaa;
+    height: 45px;
+    width: 344px;
+    background: #ccc;
 }
