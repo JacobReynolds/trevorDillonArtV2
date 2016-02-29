@@ -6,7 +6,7 @@ var crypto = require('crypto');
 var formidable = require('formidable');
 //Temp password until prod release
 var password = 'test' //process.env.LOGIN_PASSWORD;
-var portfolioPath = 'public/images/portfolio/';
+var portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio';
 var sessionKeys = [];
 var sessionCookieName = 'sessionid';
 /* GET home page. */
