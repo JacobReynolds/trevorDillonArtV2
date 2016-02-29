@@ -36,6 +36,7 @@ router.get('/sloths', function (req, res) {
     }
 });
 
+
 function verifySessionId(cookie) {
     return sessionKeys.indexOf(cookie) > -1;
 }
