@@ -5,7 +5,7 @@ var util = require('util');
 var crypto = require('crypto');
 var formidable = require('formidable');
 //Temp password until prod release
-var password = process.env.LOGIN_PASSWORD;
+var password = 'test';
 var portfolioPath = 'public/images/portfolio/';
 var sessionKeys = [];
 var sessionCookieName = 'sessionid';
@@ -111,8 +111,8 @@ function addId(sessionId) {
 }
 
 router.post('/upload', function (req, res) {
-     var cookie = parseCookies(req, sessionCookieName);
-    if (!verifySessionId(cookie)) {
+    var cookie = req.cookies[sessionCookieName];
+    if (verifySessionId(cookie)) {
         var form = new formidable.IncomingForm();
 
         form.uploadDir = portfolioPath;
@@ -126,25 +126,26 @@ router.post('/upload', function (req, res) {
             res.redirect('back');
         });
         form.parse(req)
+    } else {
+        res.redirect('back');
     }
 })
 
 router.post('/removeimage', function (req, res) {
-     var cookie = parseCookies(req, sessionCookieName);
-    if (!verifySessionId(cookie)) {
+    var cookie = req.cookies[sessionCookieName];
+    if (verifySessionId(cookie)) {
         fs.unlink(portfolioPath + req.body.imageId, function (err) {
             if (err) {
                 console.log(err);
-            } else {
-                res.redirect('back');
             }
         });
     }
+    res.redirect('back');
 });
 
 router.post('/updateImageOrder', function (req, res) {
-     var cookie = parseCookies(req, sessionCookieName);
-    if (!verifySessionId(cookie)) {
+    var cookie = req.cookies[sessionCookieName];
+    if (verifySessionId(cookie)) {
         var images = req.body;
         var name = portfolioPath;
         var uuid = new Date().getTime();
@@ -153,8 +154,8 @@ router.post('/updateImageOrder', function (req, res) {
                 if (err) throw err;
             });
         }
-        res.redirect('back');
     }
+    res.redirect('back');
 })
 
 module.exports = router;
