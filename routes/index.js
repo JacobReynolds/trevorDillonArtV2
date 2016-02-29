@@ -2,11 +2,13 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var util = require('util');
+var crypto = require('crypto');
 var formidable = require('formidable');
-var loggedIn = false;
 //Temp password until prod release
 var password = process.env.LOGIN_PASSWORD;
 var portfolioPath = 'public/images/portfolio/';
+var sessionKeys = [];
+var sessionCookieName = 'sessionid';
 /* GET home page. */
 router.get('/', function (req, res) {
     res.render('index');
@@ -17,7 +19,8 @@ if (!fs.existsSync(portfolioPath)) {
 }
 
 router.get('/sloths', function (req, res) {
-    if (!loggedIn) {
+    var cookie = req.cookies[sessionCookieName];
+    if (!verifySessionId(cookie)) {
         res.redirect('login');
     } else {
         fs.readdir(portfolioPath, function (err, result) {
@@ -31,6 +34,16 @@ router.get('/sloths', function (req, res) {
         })
     }
 });
+
+function verifySessionId(cookie) {
+    return sessionKeys.indexOf(cookie) > -1;
+}
+
+var generateKey = function() {
+    var sha = crypto.createHash('sha256');
+    sha.update(Math.random().toString());
+    return sha.digest('hex');
+};
 
 router.get('/portfolio', function (req, res) {
     fs.readdir(portfolioPath, function (err, result) {
@@ -68,17 +81,38 @@ router.get('/login', function (req, res) {
     res.render('login');
 })
 
+Date.prototype.addHours= function(h){
+    this.setHours(this.getHours()+h);
+    return this;
+}
+
 router.post('/attemptLogin', function (req, res) {
     if (req.body.password === password) {
-        loggedIn = true;
+        var sessionId = generateKey();
+        while (sessionKeys.indexOf(sessionId) > -1) {
+            sessionId = generateKey();
+        }
+        //Need to set one hour expiration here
+        res.cookie(sessionCookieName, sessionId,  {httpOnly: true});
         res.redirect('/sloths');
+        addId(sessionId);
     } else {
         res.redirect('back');
     }
 })
 
+//Should already have verified that sessionId is not in sessionKeys
+function addId(sessionId) {
+    sessionKeys.push(sessionId);
+    setTimeout(function() {
+        var index = sessionKeys.indexOf(sessionId);
+        sessionKeys.splice(index, 1);
+    }, 3600000);
+}
+
 router.post('/upload', function (req, res) {
-    if (loggedIn) {
+     var cookie = parseCookies(req, sessionCookieName);
+    if (!verifySessionId(cookie)) {
         var form = new formidable.IncomingForm();
 
         form.uploadDir = portfolioPath;
@@ -96,7 +130,8 @@ router.post('/upload', function (req, res) {
 })
 
 router.post('/removeimage', function (req, res) {
-    if (loggedIn) {
+     var cookie = parseCookies(req, sessionCookieName);
+    if (!verifySessionId(cookie)) {
         fs.unlink(portfolioPath + req.body.imageId, function (err) {
             if (err) {
                 console.log(err);
@@ -108,7 +143,8 @@ router.post('/removeimage', function (req, res) {
 });
 
 router.post('/updateImageOrder', function (req, res) {
-    if (loggedIn) {
+     var cookie = parseCookies(req, sessionCookieName);
+    if (!verifySessionId(cookie)) {
         var images = req.body;
         var name = portfolioPath;
         var uuid = new Date().getTime();
@@ -122,8 +158,3 @@ router.post('/updateImageOrder', function (req, res) {
 })
 
 module.exports = router;
-
-/*console.log(util.inspect(req.body, {
-        showHidden: false,
-        depth: null
-    }));*/

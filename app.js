@@ -5,7 +5,6 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var busboy = require('connect-busboy');
-
 var http = require('http');
 var routes = require('./routes/index');
 var users = require('./routes/users');
