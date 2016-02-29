@@ -35,11 +35,12 @@ router.get('/sloths', function (req, res) {
     }
 });
 
+
 function verifySessionId(cookie) {
     return sessionKeys.indexOf(cookie) > -1;
 }
 
-var generateKey = function() {
+var generateKey = function () {
     var sha = crypto.createHash('sha256');
     sha.update(Math.random().toString());
     return sha.digest('hex');
@@ -81,8 +82,8 @@ router.get('/login', function (req, res) {
     res.render('login');
 })
 
-Date.prototype.addHours= function(h){
-    this.setHours(this.getHours()+h);
+Date.prototype.addHours = function (h) {
+    this.setHours(this.getHours() + h);
     return this;
 }
 
@@ -93,7 +94,9 @@ router.post('/attemptLogin', function (req, res) {
             sessionId = generateKey();
         }
         //Need to set one hour expiration here
-        res.cookie(sessionCookieName, sessionId,  {httpOnly: true});
+        res.cookie(sessionCookieName, sessionId, {
+            httpOnly: true
+        });
         res.redirect('/sloths');
         addId(sessionId);
     } else {
@@ -104,7 +107,7 @@ router.post('/attemptLogin', function (req, res) {
 //Should already have verified that sessionId is not in sessionKeys
 function addId(sessionId) {
     sessionKeys.push(sessionId);
-    setTimeout(function() {
+    setTimeout(function () {
         var index = sessionKeys.indexOf(sessionId);
         sessionKeys.splice(index, 1);
     }, 3600000);
