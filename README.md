@@ -1,6 +1,6 @@
 #TrevorDillonArt
 
-A portfolio-based website build on <a target="_blank" href="www.openshift.com">OpenShift's</a> free tier servers.
+A portfolio-based website built on <a target="_blank" href="www.openshift.com">OpenShift's</a> free tier servers.
 
 This app supports
 
