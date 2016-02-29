@@ -1,2 +1,4 @@
+#!/bin/bash
+
 ln -s ${OPENSHIFT_DATA_DIR}/portfolio ${OPENSHIFT_REPO_DIR}public/images/
 
