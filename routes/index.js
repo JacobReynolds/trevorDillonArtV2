@@ -15,9 +15,7 @@ router.get('/', function (req, res) {
     res.render('index');
 });
 
-if (!fs.existsSync(publicPortfolioPath)) {
-    fs.mkdirSync(publicPortfolioPath);
-}
+//Creation of the publicPortfolioPath should be taken care of by .openshift/action_hooks/deploy
 if (!fs.existsSync(portfolioPath)) {
     fs.mkdirSync(portfolioPath);
 }
