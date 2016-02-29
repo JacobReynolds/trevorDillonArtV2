@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    process.env.NODE_ENV = 'debug';
+}
+
 var express = require('express');
 var path = require('path');
 var fs = require('fs');

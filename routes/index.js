@@ -5,9 +5,15 @@ var util = require('util');
 var crypto = require('crypto');
 var formidable = require('formidable');
 //Temp password until prod release
-var password = 'test' //process.env.LOGIN_PASSWORD;
-var portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio/';
+var password, portfolioPath;
 var publicPortfolioPath = 'public/images/portfolio';
+if (process.env.NODE_ENV === 'debug') {
+    portfolioPath = publicPortfolioPath;
+    password = 'test';
+} else {
+    password = process.env.LOGIN_PASSWORD;
+    portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio/';
+}
 var sessionKeys = [];
 var sessionCookieName = 'sessionid';
 /* GET home page. */
