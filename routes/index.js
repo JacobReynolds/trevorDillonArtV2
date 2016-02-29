@@ -6,7 +6,7 @@ var crypto = require('crypto');
 var formidable = require('formidable');
 //Temp password until prod release
 var password = 'test' //process.env.LOGIN_PASSWORD;
-var portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio';
+var portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio/';
 var sessionKeys = [];
 var sessionCookieName = 'sessionid';
 /* GET home page. */
@@ -17,7 +17,6 @@ router.get('/', function (req, res) {
 if (!fs.existsSync(portfolioPath)) {
     fs.mkdirSync(portfolioPath);
 }
-
 
 router.get('/sloths', function (req, res) {
     var cookie = req.cookies[sessionCookieName];
