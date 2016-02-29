@@ -5,7 +5,7 @@ var util = require('util');
 var crypto = require('crypto');
 var formidable = require('formidable');
 //Temp password until prod release
-var password = 'test';
+var password = process.env.LOGIN_PASSWORD;
 var portfolioPath = 'public/images/portfolio/';
 var sessionKeys = [];
 var sessionCookieName = 'sessionid';
