@@ -18,6 +18,7 @@ if (!fs.existsSync(portfolioPath)) {
     fs.mkdirSync(portfolioPath);
 }
 
+
 router.get('/sloths', function (req, res) {
     var cookie = req.cookies[sessionCookieName];
     if (!verifySessionId(cookie)) {
