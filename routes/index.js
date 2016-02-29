@@ -7,6 +7,7 @@ var formidable = require('formidable');
 //Temp password until prod release
 var password = 'test' //process.env.LOGIN_PASSWORD;
 var portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio/';
+var publicPortfolioPath = 'public/images/portfolio';
 var sessionKeys = [];
 var sessionCookieName = 'sessionid';
 /* GET home page. */
@@ -14,6 +15,9 @@ router.get('/', function (req, res) {
     res.render('index');
 });
 
+if (!fs.existsSync(publicPortfolioPath)) {
+    fs.mkdirSync(publicPortfolioPath);
+}
 if (!fs.existsSync(portfolioPath)) {
     fs.mkdirSync(portfolioPath);
 }
