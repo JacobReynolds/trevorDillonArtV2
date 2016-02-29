@@ -17,8 +17,11 @@ function updateImageOrder() {
         url: '/updateImageOrder',
         data: JSON.stringify(images),
         contentType: 'application/json',
-        success: function () {
-            location.reload();
+        success: function (ids) {
+            var images = $('.editImage').get();
+            images.forEach(function(image, index) {
+                $(image).attr('id', ids[index]);
+            })
         }
     })
 }

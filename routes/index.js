@@ -145,17 +145,19 @@ router.post('/removeimage', function (req, res) {
 
 router.post('/updateImageOrder', function (req, res) {
     var cookie = req.cookies[sessionCookieName];
+    var ids = [];
     if (verifySessionId(cookie)) {
         var images = req.body;
         var name = portfolioPath;
         var uuid = new Date().getTime();
         for (var i = 0; i < images.length; i++) {
+            ids.push(uuid);
             fs.rename(portfolioPath + images[i], name + uuid++, function (err) {
                 if (err) throw err;
             });
         }
     }
-    res.redirect('back');
+    res.json(ids);
 })
 
 module.exports = router;
