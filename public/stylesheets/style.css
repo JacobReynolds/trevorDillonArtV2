@@ -80,9 +80,6 @@ body {
 
 /*Portfolio Page Start*/
 
-#portfolioWrapper {
-    overflow: hidden;
-}
 #advancedImageContainer {
     -webkit-touch-callout: none;
     /* iOS Safari */
@@ -101,6 +98,10 @@ body {
     text-align: center;
 }
 #advancedImageContainer img {
+    /*
+    The width here ensures only 2 images will be shown per row
+    The max-width should ensure that when the image is enlarged, it won't push the neighbor down a line
+    */
     width: calc(100vw/3);
     max-width: calc(100vw/2.3);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -123,7 +124,8 @@ body {
 
 #recentWrapper .detail {
     position: absolute;
-    height: 100%;
+    /*Calculating for padding*/
+    height: calc(100%-20px);
     width: calc(100% - 20px);
     background: rgba(0, 0, 0, .5);
     color: white;
