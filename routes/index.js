@@ -4,6 +4,7 @@ var fs = require('fs');
 var util = require('util');
 var crypto = require('crypto');
 var formidable = require('formidable');
+var nodemailer = require('nodemailer');
 //Temp password until prod release
 var password = process.env.LOGIN_PASSWORD;
 portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio/';
