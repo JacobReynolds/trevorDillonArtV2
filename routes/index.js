@@ -5,15 +5,14 @@ var util = require('util');
 var crypto = require('crypto');
 var formidable = require('formidable');
 //Temp password until prod release
-var password, portfolioPath;
+var password = process.env.LOGIN_PASSWORD;
+portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio/';
 var publicPortfolioPath = 'public/images/portfolio/';
 if (process.env.NODE_ENV === 'debug') {
     portfolioPath = publicPortfolioPath;
     password = 'test';
-} else {
-    password = process.env.LOGIN_PASSWORD;
-    portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio/';
 }
+
 var sessionKeys = [];
 var sessionCookieName = 'sessionid';
 /* GET home page. */
@@ -170,5 +169,37 @@ router.post('/updateImageOrder', function (req, res) {
     }
     res.json(ids);
 })
+
+
+router.post('/sendEmail', function (req, res) {
+    console.log(req.body.name + ' ' + req.body.email + ' ' + req.body.body);
+    sendEmail(req.body.name, req.body.email, req.body.body);
+    res.redirect('back');
+})
+
+function sendEmail(name, email, body) {
+    var smtpTransport = nodemailer.createTransport("SMTP", {
+        service: "Gmail",
+        auth: {
+            user: "jreynoldsdev@gmail.com",
+            pass: process.env.EMAIL_SERVER_PASSWORD
+        }
+    });
+
+    smtpTransport.sendMail({
+        from: name + '<' + email + '>',
+        replyTo: email, // sender address
+        to: "Trevor Dillon <trevordillontattoos@gmail.com>", // comma separated list of receivers
+        subject: name, // Subject line
+        text: body // plaintext body
+    }, function (error, response) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log("Message sent: " + response.message);
+        }
+        process.exit();
+    });
+}
 
 module.exports = router;
