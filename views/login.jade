@@ -1,6 +1,11 @@
 extends layout
+block append head 
+    link(rel="stylesheet" href="/stylesheets/edit.css")
 
 block content
-    form#formAddUser(name="attemptLogin",method="post",action="/attemptLogin")
-        input#password(type="password", name="password")
+    form#loginForm(name="attemptLogin",method="post",action="/attemptLogin")
+        input#username(type="test", placeholder="username", name="username")
+        br
+        input#password(type="password", placeholder="password", name="password")
+        br
         button#btnSubmit(type="submit") submit

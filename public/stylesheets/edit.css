@@ -1,15 +1,17 @@
 html,
 body {
-    background: gray;
+    background: #3c3c3c;
     margin: 0;
     padding: 0;
 }
-#editImageContainer {
-    position: relative;
+#slothWrapper {
+    width: 80vw;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    margin: 10px;
+}
+#editImageContainer {
+    position: relative;
     display: inline-block;
     vertical-align: top;
     width: auto;
@@ -36,12 +38,22 @@ body {
     outline: 0;
 }
 #uploadForm {
-    background: gray;
     width: 400px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    margin-top: 50px;
+}
+#uploadForm input[type='file'] {
+    color: white;
+}
+#uploadForm button {
+    background: #B3F090;
+    border: none;
+    border-radius: 5px;
+    width: 75px;
+    height: 25px;
 }
 #back {
     position: relative;
@@ -71,9 +83,33 @@ body {
     position: absolute;
     margin: 0px !important;
 }
-.ui-sortable-placeholder {
-    border: 3px dashed #aaa;
-    height: 45px;
-    width: 344px;
-    background: #ccc;
+#loginForm {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    color: white;
+}
+#loginForm button {
+    width: 200px;
+    color: black;
+    background: #dff0d8;
+    border: none;
+    border-radius: 20px;
+    height: 50px;
+    margin-top: 20px;
+    transition: all .5s ease;
+}
+#loginForm button:hover {
+    background: #B3F090;
+}
+#loginForm input {
+    margin: 10px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+#loginForm input:focus {
+    outline: 0;
 }

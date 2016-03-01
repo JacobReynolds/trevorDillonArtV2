@@ -8,6 +8,8 @@ block content
             each image, i in images
                 div(onclick="enlargePicture(this)")#advancedImageContainer
                     img(src="images/portfolio/#{image}")
+                    
+block append scripts
     script(src='/javascripts/enlargeImage.js')    
     script.
         setImageDimensions()

@@ -6,5 +6,6 @@ block content
             p Hover for clarity
             p Click image to enlarge
         section#photos
-        script(src='/javascripts/enlargeImage.js')
-        script(src='/javascripts/recent.js')
+block append scripts
+    script(src='/javascripts/enlargeImage.js')
+    script(src='/javascripts/recent.js')
