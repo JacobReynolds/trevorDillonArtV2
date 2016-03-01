@@ -2,7 +2,12 @@ extends layout
 
 block content
     div#portfolioWrapper
+        div#description
+            p Click image to enlarge
         section#photos
             each image, i in images
-                div#advancedImageContainer
+                div(onclick="enlargePicture(this)")#advancedImageContainer
                     img(src="images/portfolio/#{image}")
+    script(src='/javascripts/enlargeImage.js')    
+    script.
+        setImageDimensions()

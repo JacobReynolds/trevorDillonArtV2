@@ -21,6 +21,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     z-index: 1000;
+    font-size: 20px;
 }
 #navOptions {
     color: white;
@@ -29,6 +30,7 @@ body {
     padding: 0px;
 }
 #navOptions li {
+    line-height: 100%;
     display: inline-block;
     margin-left: 20px;
     margin-right: 20px;
@@ -89,8 +91,13 @@ body {
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    transition: all .5s ease !important;
 }
 #photos {
+    text-align: center;
+}
+#portfolioWrapper #description {
+    color: white;
     text-align: center;
 }
 
@@ -99,6 +106,25 @@ body {
 
 /*Recent Page Start*/
 
+#recentWrapper .detail {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    color: white;
+    opacity: 1;
+    transition: all .5s ease;
+}
+#recentWrapper detail p {
+    margin: 10px;
+}
+#recentWrapper .detail:hover {
+    opacity: 0;
+}
+#recentWrapper #description {
+    color: white;
+    text-align: center;
+}
 
 /*Recent Page End*/
 
