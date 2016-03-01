@@ -51,7 +51,7 @@ body {
 
 #welcomeWrapper {
     min-height: 100vh;
-    width: 100vw;
+    min-width: 100vw;
     background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -66,23 +66,17 @@ body {
     margin: 0px;
     padding: 0px;
     position: relative;
-    margin-top: 30vh;
+    margin-top: 100px;
     color: wheat;
 }
 #welcomeWrapper #header #subHeader {
     font-size: 24px;
 }
-#email {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
 #emailButton {
     height: 50px;
     width: 300px;
     border: none;
-    opacity: .5;
-    background: #383838;
+    background: rgba(57, 0, 0, .8);
     border-radius: 15px;
     color: white;
     padding-top: 20px;
@@ -90,13 +84,17 @@ body {
     transition: all .5s ease;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 25vh;
     overflow: hidden;
     text-align: center;
 }
 .expandedButton {
     opacity: 1 !important;
     width: 500px !important;
+    background: rgba(57, 0, 0, .8) !important;
+    max-width: 90vw;
     height: 475px !important;
+    margin-top: calc(25vh - 137px) !important;
 }
 #slidingUnderline {
     position: relative;
@@ -116,32 +114,23 @@ body {
 #emailButton:hover #slidingUnderline:after {
     width: 100%;
 }
-#emailer {
-    transition: all .5s ease;
-    background: white;
-    height: 0px;
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
 button:focus {
     outline: 0;
 }
 form textarea {
-    background: #383838;
+    background: rgba(56, 56, 56, .5);
     border: none;
     resize: none;
     height: 300px;
     width: 80%;
     color: white;
     font-size: 20px;
+    padding: 0px;
 }
 form input {
     border: none;
     color: white;
-    background: #383838;
+    background: rgba(56, 56, 56, .5);
     width: 40%;
     font-size: 24px;
 }
@@ -269,6 +258,15 @@ form button:hover {
     #advancedImageContainer img {
         width: 300px;
         max-width: 90vw;
+    }
+    form input {
+        width: 80%;
+    }
+    #welcomeWrapper #header {
+        margin-top: 150px;
+    }
+    .expandedButton {
+        height: 500px !important;
     }
 }
 @media (max-width: 400px) {
