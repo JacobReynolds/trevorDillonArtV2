@@ -83,7 +83,6 @@ body {
     display: inline-block;
     margin: 20px;
     text-align: center;
-    min-width: 400px;
 }
 #advancedImageContainer img {
     width: 400px;
