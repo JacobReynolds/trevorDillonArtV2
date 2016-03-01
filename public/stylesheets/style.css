@@ -62,11 +62,11 @@ body {
 }
 #welcomeWrapper #header {
     text-align: center;
-    font-size: 48px;
+    font-size: 60px;
     margin: 0px;
     padding: 0px;
     position: relative;
-    line-height: 99vh;
+    line-height: calc(100vh - 12px);
     color: wheat;
 }
 #welcomeWrapper #header #subHeader {
