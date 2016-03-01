@@ -5,6 +5,7 @@ body {
     margin: 0px;
     padding: 0px;
     background: #272727;
+    font-family: 'Roboto', sans-serif;
 }
 
 /*Global End*/
@@ -16,11 +17,12 @@ body {
     height: auto;
     width: auto;
     position: relative;
+    top: 0px;
     margin-left: auto;
     margin-right: auto;
+    z-index: 1000;
 }
 #navOptions {
-    position: relative;
     color: white;
     list-style-type: none;
     text-align: center;
@@ -49,22 +51,13 @@ body {
 #welcomeWrapper {
     height: 100vh;
     width: 100vw;
-    font-family: 'Roboto', sans-serif;
-    background: url(/images/background-min1366.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-}
-#welcomeWrapper:before {
-    content: "";
-    display: block;
     position: absolute;
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, .5);
 }
 #welcomeWrapper #header {
     text-align: center;
@@ -94,6 +87,9 @@ body {
 }
 #advancedImageContainer img {
     width: 400px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 #photos {
     text-align: center;
@@ -126,7 +122,7 @@ body {
 
 @media (max-width: 2000px) {
     #welcomeWrapper {
-        background: url('../images/background-min1980.jpg');
+        background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../images/background-min1980.jpg');
     }
 }
 @media (max-width: 1200px) {}

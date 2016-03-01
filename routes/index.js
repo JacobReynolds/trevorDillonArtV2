@@ -6,7 +6,7 @@ var crypto = require('crypto');
 var formidable = require('formidable');
 //Temp password until prod release
 var password, portfolioPath;
-var publicPortfolioPath = 'public/images/portfolio';
+var publicPortfolioPath = 'public/images/portfolio/';
 if (process.env.NODE_ENV === 'debug') {
     portfolioPath = publicPortfolioPath;
     password = 'test';
