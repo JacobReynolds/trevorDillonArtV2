@@ -80,18 +80,33 @@ body {
 
 /*Portfolio Page Start*/
 
+#portfolioWrapper {
+    overflow: hidden;
+}
 #advancedImageContainer {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
     position: relative;
     display: inline-block;
     margin: 20px;
     text-align: center;
 }
 #advancedImageContainer img {
-    width: 400px;
+    width: calc(100vw/3);
+    max-width: calc(100vw/2.3);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    transition: all .5s ease !important;
+    transition: all .4s ease !important;
 }
 #photos {
     text-align: center;
@@ -109,14 +124,12 @@ body {
 #recentWrapper .detail {
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: calc(100% - 20px);
     background: rgba(0, 0, 0, .5);
     color: white;
     opacity: 1;
+    padding: 10px;
     transition: all .5s ease;
-}
-#recentWrapper detail p {
-    margin: 10px;
 }
 #recentWrapper .detail:hover {
     opacity: 0;
@@ -154,20 +167,24 @@ body {
 @media (max-width: 1000px) {
     margin: 10px;
 }
-@media (max-width: 400px) {
-    #welcomeWrapper #header #title {
-        font-size: 36px;
-    }
-    #welcomeWrapper #header #subHeader {
-        font-size: 16px;
-    }
+@media (max-width: 600px) {
     #navOptions li {
+        display: block;
         margin-left: 10px;
         margin-right: 10px;
         padding: 5px;
     }
     #advancedImageContainer img {
         width: 300px;
+        max-width: 90vw;
+    }
+}
+@media (max-width: 400px) {
+    #welcomeWrapper #header #title {
+        font-size: 36px;
+    }
+    #welcomeWrapper #header #subHeader {
+        font-size: 16px;
     }
 }
 
