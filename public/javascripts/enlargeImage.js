@@ -7,12 +7,12 @@ function setImageDimensions() {
     smallWidth = $('#advancedImageContainer').first().find('img').width();
     largeWidth = smallWidth + 200;
 }
-//Should abstract these dimension variables so they aren't hardcoded
+
 function enlargePicture(parent) {
     var image = $(parent).find('img');
     var newPreviousImage;
     var width;
-    if (image.width() <= 400) {
+    if (image.width() <= smallWidth) {
         width = largeWidth;
         newPreviousImage = image;
     } else {
