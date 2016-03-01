@@ -21,6 +21,10 @@ router.get('/', function (req, res) {
     res.render('index');
 });
 
+router.get('/contact', function (req, res) {
+    res.render('contact');
+});
+
 //Creation of the publicPortfolioPath should be taken care of by .openshift/action_hooks/deploy
 if (!fs.existsSync(portfolioPath)) {
     fs.mkdirSync(portfolioPath);

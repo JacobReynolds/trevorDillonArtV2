@@ -66,92 +66,11 @@ body {
     margin: 0px;
     padding: 0px;
     position: relative;
-    margin-top: 100px;
+    line-height: 99vh;
     color: wheat;
 }
 #welcomeWrapper #header #subHeader {
     font-size: 24px;
-}
-#welcomeWrapper #emailButton {
-    height: 50px;
-    width: 300px;
-    border: none;
-    background: rgba(57, 0, 0, .8);
-    border-radius: 15px;
-    color: white;
-    padding-top: 20px;
-    font-family: 'Roboto', sans-serif;
-    transition: all .5s ease;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25vh;
-    overflow: hidden;
-    text-align: center;
-}
-#welcomeWrapper .expandedButton {
-    opacity: 1 !important;
-    width: 500px !important;
-    background: rgba(57, 0, 0, .8) !important;
-    max-width: 90vw;
-    height: 475px !important;
-    margin-top: calc(25vh - 137px) !important;
-}
-#welcomeWrapper #slidingUnderline {
-    position: relative;
-    color: white;
-}
-#welcomeWrapper #slidingUnderline:after {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 0;
-    height: 5px;
-    background-color: white;
-    content: "";
-    transition: width 0.2s;
-}
-#emailButton:hover #slidingUnderline:after {
-    width: 100%;
-}
-#welcomeWrapper button:focus {
-    outline: 0;
-}
-#welcomeWrapper form textarea {
-    background: rgba(56, 56, 56, .5);
-    border: none;
-    resize: none;
-    height: 300px;
-    width: 80%;
-    color: white;
-    font-size: 20px;
-    padding: 0px;
-}
-#welcomeWrapper form input {
-    border: none;
-    color: white;
-    background: rgba(56, 56, 56, .5);
-    width: 40%;
-    font-size: 24px;
-}
-#welcomeWrapper input:focus {
-    outline: 0;
-}
-#welcomeWrapper textarea:focus {
-    outline: 0;
-}
-#welcomeWrapper form button {
-    border: none;
-    height: 40px;
-    margin-top: 10px;
-    border-radius: 20px;
-    width: 150px;
-    background: #dff0d8;
-    color: black;
-    transition: all .5s ease;
-}
-#welcomeWrapper form button:hover {
-    background: #B3F090;
 }
 
 /*Welcome Page End */
@@ -235,6 +154,93 @@ body {
 }
 
 /*About Page End*/
+
+
+/*Contact Page Start*/
+
+#contactWrapper #emailButton {
+    height: 50px;
+    width: 300px;
+    border: none;
+    background: rgba(57, 0, 0, .8);
+    border-radius: 15px;
+    color: white;
+    padding-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    transition: all .5s ease;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+    overflow: hidden;
+    text-align: center;
+}
+#contactWrapper .expandedButton {
+    opacity: 1 !important;
+    width: 500px !important;
+    background: rgba(57, 0, 0, .8) !important;
+    max-width: 90vw;
+    height: 475px !important;
+    margin-top: calc(25vh - 137px) !important;
+}
+#contactWrapper #slidingUnderline {
+    position: relative;
+    color: white;
+}
+#contactWrapper #slidingUnderline:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 5px;
+    background-color: white;
+    content: "";
+    transition: width 0.2s;
+}
+#emailButton:hover #slidingUnderline:after {
+    width: 100%;
+}
+#contactWrapper button:focus {
+    outline: 0;
+}
+#contactWrapper form textarea {
+    background: rgba(56, 56, 56, .5);
+    border: none;
+    resize: none;
+    height: 300px;
+    width: 80%;
+    color: white;
+    font-size: 20px;
+    padding: 0px;
+}
+#contactWrapper form input {
+    border: none;
+    color: white;
+    background: rgba(56, 56, 56, .5);
+    width: 40%;
+    font-size: 24px;
+}
+#contactWrapper input:focus {
+    outline: 0;
+}
+#contactWrapper textarea:focus {
+    outline: 0;
+}
+#contactWrapper form button {
+    border: none;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+    width: 150px;
+    background: #dff0d8;
+    color: black;
+    transition: all .5s ease;
+}
+#contactWrapper form button:hover {
+    background: #B3F090;
+}
+
+/*Contact Page End*/
 
 
 /*Media Queries Start*/

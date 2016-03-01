@@ -1,0 +1,34 @@
+.nav {
+    height: auto;
+    width: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1000;
+    font-size: 20px;
+}
+#navOptions {
+    color: white;
+    list-style-type: none;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+}
+#navOptions li {
+    width: auto;
+    display: block !important;
+    margin-left: 0px;
+    margin-right: 0px;
+    cursor: pointer;
+    transition: all .3s ease;
+    height: 20vh;
+    line-height: 20vh;
+    padding: 0px;
+    padding-left: 20px;
+    border-radius: 0px;
+}
+#navOptions li:hover {
+    color: white;
+    background: rgba(79, 0, 0, .5);
+    font-size: 36px;
+}
