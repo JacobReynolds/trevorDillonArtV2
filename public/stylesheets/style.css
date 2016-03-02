@@ -39,9 +39,19 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
-#navOptions li:hover {
-    color: rgb(103, 0, 13);
-    background: white;
+#navOptions li:after {
+    display: block;
+    position: relative;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 5px;
+    background-color: white;
+    content: "";
+    transition: width 0.2s;
+}
+#navOptions li:hover:after {
+    width: 100%;
 }
 
 /*nav bar test end*/
@@ -67,7 +77,7 @@ body {
     padding: 0px;
     position: relative;
     line-height: calc(100vh - 12px);
-    color: wheat;
+    color: white;
 }
 #welcomeWrapper #header #subHeader {
     font-size: 24px;
@@ -248,11 +258,24 @@ body {
 @media (max-width: 2000px) {
     #welcomeWrapper {
         background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../images/background-min1980.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
 }
 @media (max-width: 1200px) {}
 @media (max-width: 1000px) {
     margin: 10px;
+}
+@media (max-width: 800px) {
+    #navOptions li {
+        font-size: 14px;
+        padding: 10px;
+    }
+    #welcomeWrapper #header {
+        display: none;
+    }
 }
 @media (max-width: 600px) {
     #navOptions li {
@@ -276,17 +299,10 @@ body {
     }
 }
 @media (max-width: 400px) {
-    #welcomeWrapper #header {
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5px;
-        line-height: normal;
-        font-size: 24px;
+    #navOptions li {
+        width: 100vw !important;
         text-align: center;
-    }
-    #welcomeWrapper #subHeader {
-        display: none;
+        padding-left: 0px !important;
     }
 }
 
