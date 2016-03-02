@@ -35,7 +35,7 @@ body {
     margin-right: 20px;
     cursor: pointer;
     -webkit-transition: all .3s ease;
-    transition: all .3s ease;
+            transition: all .3s ease;
     height: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -50,7 +50,7 @@ body {
     background-color: white;
     content: "";
     -webkit-transition: width 0.2s;
-    transition: width 0.2s;
+            transition: width 0.2s;
 }
 #navOptions li:hover:after {
     width: 100%;
@@ -64,7 +64,6 @@ body {
 #welcomeWrapper {
     min-height: 100vh;
     min-width: 100vw;
-    background: -webkit-linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background-position: center center;
@@ -90,16 +89,10 @@ body {
 /*Portfolio Page Start*/
 
 #advancedImageContainer {
-    -webkit-touch-callout: none;
-    /* iOS Safari */
     -webkit-user-select: none;
-    /* Chrome/Safari/Opera */
-    /* Konqueror */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE/Edge */
-    user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     position: relative;
     display: inline-block;
     margin: 20px;
@@ -114,7 +107,7 @@ body {
     max-width: 850px;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -webkit-transition: all .4s ease !important;
-    transition: all .4s ease !important;
+            transition: all .4s ease !important;
 }
 #photos {
     text-align: center;
@@ -139,7 +132,7 @@ body {
     opacity: 1;
     padding: 10px;
     -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+            transition: all .5s ease;
 }
 #recentWrapper .detail:hover {
     opacity: 0;
@@ -178,7 +171,7 @@ body {
     padding-top: 20px;
     font-family: 'Roboto', sans-serif;
     -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+            transition: all .5s ease;
     margin-left: auto;
     margin-right: auto;
     margin-top: 25vh;
@@ -207,7 +200,7 @@ body {
     background-color: white;
     content: "";
     -webkit-transition: width 0.2s;
-    transition: width 0.2s;
+            transition: width 0.2s;
 }
 #emailButton:hover #slidingUnderline:after {
     width: 100%;
@@ -247,7 +240,7 @@ body {
     background: #dff0d8;
     color: black;
     -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+            transition: all .5s ease;
 }
 #contactWrapper form button:hover {
     background: #B3F090;
@@ -260,7 +253,6 @@ body {
 
 @media (min-width: 2000px) {
     #welcomeWrapper {
-        background: -webkit-linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
         background: -webkit-linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
         background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
         background-position: center center;

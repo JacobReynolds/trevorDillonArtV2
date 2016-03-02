@@ -34,7 +34,6 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     cursor: pointer;
-    -webkit-transition: all .3s ease;
     transition: all .3s ease;
     height: 20px;
     padding: 20px;
@@ -49,7 +48,6 @@ body {
     height: 5px;
     background-color: white;
     content: "";
-    -webkit-transition: width 0.2s;
     transition: width 0.2s;
 }
 #navOptions li:hover:after {
@@ -64,7 +62,6 @@ body {
 #welcomeWrapper {
     min-height: 100vh;
     min-width: 100vw;
-    background: -webkit-linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -89,15 +86,6 @@ body {
 /*Portfolio Page Start*/
 
 #advancedImageContainer {
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Chrome/Safari/Opera */
-    /* Konqueror */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE/Edge */
     user-select: none;
     position: relative;
     display: inline-block;
@@ -111,10 +99,7 @@ body {
     */
     width: calc(100vw/3);
     max-width: 850px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -webkit-transition: all .4s ease !important;
     transition: all .4s ease !important;
 }
 #photos {
@@ -139,7 +124,6 @@ body {
     color: white;
     opacity: 1;
     padding: 10px;
-    -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
 #recentWrapper .detail:hover {
@@ -178,7 +162,6 @@ body {
     color: white;
     padding-top: 20px;
     font-family: 'Roboto', sans-serif;
-    -webkit-transition: all .5s ease;
     transition: all .5s ease;
     margin-left: auto;
     margin-right: auto;
@@ -207,7 +190,6 @@ body {
     height: 5px;
     background-color: white;
     content: "";
-    -webkit-transition: width 0.2s;
     transition: width 0.2s;
 }
 #emailButton:hover #slidingUnderline:after {
@@ -247,7 +229,6 @@ body {
     width: 150px;
     background: #dff0d8;
     color: black;
-    -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
 #contactWrapper form button:hover {
@@ -261,7 +242,6 @@ body {
 
 @media (min-width: 2000px) {
     #welcomeWrapper {
-        background: -webkit-linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
         background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
         background-position: center center;
         background-repeat: no-repeat;
