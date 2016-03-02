@@ -3,7 +3,7 @@ extends layout
 block content
     div#portfolioWrapper
         div#description
-            p Click image to enlarge
+            p#enlarge Click image to enlarge
         section#photos
             each image, i in images
                 div(onclick="enlargePicture(this)")#advancedImageContainer
