@@ -82,9 +82,6 @@ body {
     top: calc(50vh - 30px);
     color: white;
 }
-#welcomeWrapper #header #subHeader {
-    font-size: 24px;
-}
 
 /*Welcome Page End */
 
