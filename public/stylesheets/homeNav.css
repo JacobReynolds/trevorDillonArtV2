@@ -52,7 +52,7 @@
 }
 @media (max-width: 400px) {
     #navOptions li:hover:after {
-        width: 100vw;
+        width: calc(100vw + 20px);
     }
     #navOptions li {
         font-size: 24px;
