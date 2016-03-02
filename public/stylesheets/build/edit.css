@@ -26,7 +26,7 @@ body {
     border: none;
     border-radius: 10px;
     -webkit-transition: all .3s ease;
-    transition: all .3s ease;
+            transition: all .3s ease;
 }
 #editImageContainer img {
     width: 200px;
@@ -72,7 +72,7 @@ body {
     left: 10px;
     top: 10px;
     -webkit-transition: all .2s ease;
-    transition: all .2s ease;
+            transition: all .2s ease;
 }
 #back:hover {
     background: white;
@@ -101,7 +101,7 @@ body {
     height: 50px;
     margin-top: 20px;
     -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+            transition: all .5s ease;
 }
 #loginForm button:hover {
     background: #B3F090;

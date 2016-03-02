@@ -24,7 +24,10 @@
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
     height: 20vh;
-    line-height: 20vh;
+    vertical-align: middle;
+    /*Firefox doesn't allow calc in line-height*/
+    line-height: 19vh;
+    line-height: calc(20vh - 15px);
     padding: 0px;
     background: rgba(79, 0, 0, .5);
     padding-left: 20px;

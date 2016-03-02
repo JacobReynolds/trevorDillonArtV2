@@ -65,6 +65,7 @@ body {
     min-height: 100vh;
     min-width: 100vw;
     background: -webkit-linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -79,11 +80,8 @@ body {
     margin: 0px;
     padding: 0px;
     position: relative;
-    line-height: calc(100vh - 12px);
+    top: calc(50vh - 30px);
     color: white;
-}
-#welcomeWrapper #header #subHeader {
-    font-size: 24px;
 }
 
 /*Welcome Page End */
@@ -113,7 +111,7 @@ body {
     The max-width should ensure that when the image is enlarged, it won't push the neighbor down a line
     */
     width: calc(100vw/3);
-    max-width: calc(100vw/2.3);
+    max-width: 850px;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -webkit-transition: all .4s ease !important;
     transition: all .4s ease !important;
@@ -260,14 +258,23 @@ body {
 
 /*Media Queries Start*/
 
-@media (max-width: 2000px) {
+@media (min-width: 2000px) {
     #welcomeWrapper {
         background: -webkit-linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
         background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
+    }
+    #description #enlarge {
+        display: none;
+    }
+}
+@media (max-width: 1900px) {
+    #description #enlarge {
+        display: block;
     }
 }
 @media (max-width: 1200px) {}
