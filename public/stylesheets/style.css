@@ -94,6 +94,7 @@ body {
     display: inline-block;
     margin: 20px;
     text-align: center;
+    vertical-align: top;
 }
 #advancedImageContainer img {
     /*
