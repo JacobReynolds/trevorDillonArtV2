@@ -19,7 +19,7 @@ module.exports = function (grunt) {
         watch: {
             styles: {
                 files: ['public/stylesheets/*.css'],
-                tasks: ['autoprefixer']
+                tasks: ['postcss']
             }
         }
     });
