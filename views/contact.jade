@@ -8,7 +8,7 @@ block content
             br
             br
             form(method="post" action="/sendEmail")
-                input(type='text', pattern="^[a-z,.'-]+$", name='name', placeholder='Your Name', required='')
+                input(type='text', pattern="^[a-zA-Z,.'-]+[ ]*[ a-z,.'-]*$", name='name', placeholder='Your Name', autofocus)
                 input(type='email', name='email', placeholder='Your Email', required='')
                 br
                 textarea(height='200px', name="body", placeholder='Hey Trevor!', required='')
