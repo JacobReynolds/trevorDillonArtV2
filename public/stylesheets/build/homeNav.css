@@ -51,9 +51,6 @@
         padding: 0px;
         padding-left: 10px;
     }
-    #welcomeWrapper #header {
-        display: none;
-    }
 }
 @media (max-width: 400px) {
     #navOptions li:hover:after {

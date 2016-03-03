@@ -5,7 +5,7 @@ body {
     margin: 0px;
     padding: 0px;
     background: #272727;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Times new roman', sans-serif;
 }
 
 /*Global End*/
@@ -75,7 +75,7 @@ body {
 }
 #welcomeWrapper #header {
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
     margin: 0px;
     padding: 0px;
     position: relative;
@@ -165,7 +165,6 @@ body {
     border-radius: 15px;
     color: white;
     padding-top: 20px;
-    font-family: 'Roboto', sans-serif;
     transition: all .5s ease;
     margin-left: auto;
     margin-right: auto;
@@ -265,15 +264,16 @@ body {
 }
 @media (max-width: 1200px) {}
 @media (max-width: 1000px) {
-    margin: 10px;
+    #welcomeWrapper #header {
+        font-size: 40px;
+        text-align: right;
+        padding-right: 20px;
+    }
 }
 @media (max-width: 800px) {
     #navOptions li {
         font-size: 14px;
         padding: 10px;
-    }
-    #welcomeWrapper #header {
-        display: none;
     }
 }
 @media (max-width: 600px) {
@@ -292,7 +292,7 @@ body {
         width: 80%;
     }
     #welcomeWrapper #header {
-        margin-top: 150px;
+        font-size: 20px;
     }
     .expandedButton {
         height: 500px !important;
