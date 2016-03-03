@@ -320,6 +320,9 @@ body {
     #navOptions {
         margin: 0px;
     }
+    #welcomeWrapper #header {
+        display: none;
+    }
     #advancedImageContainer {
         margin: 0px !important;
         display: block;
