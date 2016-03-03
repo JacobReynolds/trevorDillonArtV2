@@ -1,10 +1,18 @@
 module.exports = function (grunt) {
     grunt.initConfig({
-        autoprefixer: {
-                multiple_files: {
+        postcss: {
+            options: {
+                map: false,
+                processors: [
+                    require('autoprefixer')({
+                        browsers: ['last 2 version']
+                    })
+                ]
+            },
+            multiple_files: {
                 expand: true,
                 flatten: true,
-                src: 'public/stylesheets/*.css', 
+                src: 'public/stylesheets/*.css',
                 dest: 'public/stylesheets/build/'
             }
         },
@@ -15,8 +23,9 @@ module.exports = function (grunt) {
             }
         }
     });
-    grunt.loadNpmTasks('grunt-autoprefixer');
+
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-grunt.registerTask('default', ['watch', 'autoprefixer']);
+    grunt.registerTask('default', ['watch', 'postcss']);
 };
