@@ -24,9 +24,11 @@ body {
 }
 #navOptions {
     color: white;
+    background: rgba(79, 0, 0, .5);
     list-style-type: none;
     text-align: center;
     padding: 0px;
+    margin: 0px;
 }
 #navOptions li {
     line-height: 100%;
@@ -37,7 +39,6 @@ body {
     transition: all .3s ease;
     height: 20px;
     padding: 20px;
-    border-radius: 10px;
 }
 #navOptions li:after {
     display: block;
@@ -124,12 +125,12 @@ body {
     width: calc(100% - 20px);
     background: rgba(0, 0, 0, .5);
     color: white;
-    opacity: 1;
+    opacity: 0;
     padding: 10px;
     transition: all .5s ease;
 }
 #recentWrapper .detail:hover {
-    opacity: 0;
+    opacity: 1;
 }
 #recentWrapper #description {
     color: white;
@@ -298,9 +299,32 @@ body {
 }
 @media (max-width: 400px) {
     #navOptions li {
-        width: 100vw !important;
-        text-align: center;
-        padding-left: 0px !important;
+        width: calc(100vw - 10px) !important;
+        text-align: left;
+        font-size: 18px;
+        height: 40px;
+        line-height: 40px;
+        background: rgba(79, 0, 0, .5);
+        margin: 0px;
+    }
+    #navOptions {
+        margin: 0px;
+    }
+    #advancedImageContainer {
+        margin: 0px !important;
+        display: block;
+        height: 100vw;
+    }
+    #advancedImageContainer img {
+        width: 100vw;
+        max-width: 100vw;
+        box-shadow: none;
+    }
+    .detail {
+        display: none;
+    }
+    #description {
+        display: none;
     }
 }
 

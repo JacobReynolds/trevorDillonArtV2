@@ -9,6 +9,7 @@
 }
 #navOptions {
     color: white;
+    background: none;
     list-style-type: none;
     text-align: left;
     padding: 0px;
@@ -56,9 +57,10 @@
 }
 @media (max-width: 400px) {
     #navOptions li:hover:after {
-        width: calc(100vw + 20px);
+        width: calc(100vw + 20px) !important;
     }
     #navOptions li {
         font-size: 24px;
+        text-align: center;
     }
 }
