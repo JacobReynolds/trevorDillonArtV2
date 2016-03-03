@@ -48,6 +48,7 @@
     #navOptions li {
         font-size: 24px;
         padding: 0px;
+        padding-left: 10px;
     }
     #welcomeWrapper #header {
         display: none;

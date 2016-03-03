@@ -62,6 +62,7 @@ body {
 #welcomeWrapper {
     min-height: 100vh;
     min-width: 100vw;
+    background: url(/images/background-min1366.jpg);
     background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -245,6 +246,7 @@ body {
 
 @media (min-width: 2000px) {
     #welcomeWrapper {
+        background: url('/images/background-min1980.jpg');
         background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
         background-position: center center;
         background-repeat: no-repeat;
