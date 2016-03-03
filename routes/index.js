@@ -91,7 +91,20 @@ router.get('/getPortfolio', function (req, res) {
 })
 
 router.get('/login', function (req, res) {
-    res.render('login');
+    var cookie = req.cookies[sessionCookieName];
+    if (verifySessionId(cookie)) {
+        fs.readdir(portfolioPath, function (err, result) {
+            if (err) {
+                console.error(err);
+                result = [];
+            }
+            res.render('sloths', {
+                'images': result
+            })
+        })
+    } else {
+        res.render('login');
+    }
 })
 
 Date.prototype.addHours = function (h) {
