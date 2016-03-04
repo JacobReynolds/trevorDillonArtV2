@@ -1,18 +1,14 @@
-/*Global Start*/
-
-html,
-body {
+html {
     margin: 0px;
     padding: 0px;
     background: #272727;
     font-family: 'Times new roman', sans-serif;
 }
-
-/*Global End*/
-
-
-/*nav bar test start*/
-
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Times new roman', sans-serif;
+}
 .nav {
     height: auto;
     width: auto;
@@ -51,232 +47,11 @@ body {
     content: "";
     transition: width 0.2s;
 }
+#navOptions li.active:after {
+    width: 100%;
+}
 #navOptions li:hover:after {
     width: 100%;
-}
-
-/*nav bar test end*/
-
-
-/* Welcome Page Start*/
-
-#welcomeWrapper {
-    min-height: 100vh;
-    min-width: 100vw;
-    /*Background override since IE doesn't support linear-gradient for backgrounds*/
-    background: url(/images/background-min1366.jpg);
-    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-}
-#welcomeWrapper #header {
-    text-align: center;
-    font-size: 50px;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
-    top: calc(50vh - 30px);
-    color: white;
-}
-
-/*Welcome Page End */
-
-
-/*Portfolio Page Start*/
-
-#advancedImageContainer {
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    position: relative;
-    display: inline-block;
-    margin: 20px;
-    text-align: center;
-    vertical-align: top;
-}
-#advancedImageContainer img {
-    /*
-    The width here ensures only 2 images will be shown per row
-    The max-width should ensure that when the image is enlarged, it won't push the neighbor down a line
-    */
-    width: calc(100vw/3);
-    max-width: 850px;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    transition: all .4s ease !important;
-}
-#photos {
-    text-align: center;
-}
-#portfolioWrapper #description {
-    color: white;
-    text-align: center;
-}
-
-/*Portfolio Page End*/
-
-
-/*Recent Page Start*/
-
-#recentWrapper .detail {
-    position: absolute;
-    /*Calculating for padding*/
-    height: calc(100% - 20px);
-    width: calc(100% - 20px);
-    background: rgba(0, 0, 0, .5);
-    color: white;
-    opacity: 0;
-    padding: 10px;
-    transition: all .5s ease;
-}
-#recentWrapper .detail:hover {
-    opacity: 1;
-}
-#recentWrapper #description {
-    color: white;
-    text-align: center;
-}
-
-/*Recent Page End*/
-
-
-/*About Page Start*/
-
-#aboutWrapper h1 {
-    text-align: center;
-    color: white;
-}
-#aboutWrapper h2 {
-    text-align: center;
-    color: white;
-}
-
-/*About Page End*/
-
-
-/*Contact Page Start*/
-
-#contactWrapper {
-    /*Background override since IE doesn't support linear-gradient for backgrounds*/
-    background: url(/images/background-min1366.jpg);
-    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    top: 0px;
-    position: absolute;
-}
-#contactWrapper #emailButton {
-    height: 500px;
-    max-width: 500px;
-    border: none;
-    background: rgba(57, 0, 0, .8);
-    border-radius: 15px;
-    color: white;
-    padding-top: 20px;
-    transition: all .5s ease;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-#contactWrapper #slidingUnderline {
-    position: relative;
-    color: white;
-}
-#contactWrapper #slidingUnderline:after {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 5px;
-    background-color: white;
-    content: "";
-    transition: width 0.2s;
-}
-#contactWrapper button:focus {
-    outline: 0;
-}
-#contactWrapper form textarea {
-    background: rgba(56, 56, 56, .5);
-    border: none;
-    resize: none;
-    height: 300px;
-    width: 80%;
-    color: white;
-    margin: 10px;
-    font-size: 20px;
-    padding: 0px;
-}
-#contactWrapper form input {
-    border: none;
-    color: white;
-    margin: 10px;
-    background: rgba(56, 56, 56, .5);
-    width: 40%;
-    font-size: 24px;
-}
-#contactWrapper input:focus {
-    outline: 0;
-}
-#contactWrapper textarea:focus {
-    outline: 0;
-}
-#contactWrapper form button {
-    border: none;
-    height: 40px;
-    margin-top: 10px;
-    border-radius: 20px;
-    width: 150px;
-    background: #dff0d8;
-    color: black;
-    transition: all .5s ease;
-}
-#contactWrapper form button:hover {
-    background: #B3F090;
-}
-
-/*Contact Page End*/
-
-
-/*Media Queries Start*/
-
-@media (min-width: 2000px) {
-    #welcomeWrapper {
-        /*Background override since IE doesn't support linear-gradient for backgrounds*/
-        background: url('/images/background-min1980.jpg');
-        background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/images/background-min1980.jpg');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-    }
-    #description #enlarge {
-        display: none;
-    }
-}
-@media (max-width: 1900px) {
-    #description #enlarge {
-        display: block;
-    }
-}
-@media (max-width: 1200px) {}
-@media (max-width: 1000px) {
-    #welcomeWrapper #header {
-        font-size: 40px;
-        text-align: right;
-        padding-right: 20px;
-    }
 }
 @media (max-width: 800px) {
     #navOptions li {
@@ -286,27 +61,13 @@ body {
 }
 @media (max-width: 600px) {
     #navOptions li {
-        display: block;
         margin-left: 10px;
         margin-right: 10px;
         padding: 5px;
         white-space: nowrap;
     }
-    #advancedImageContainer img {
-        width: 300px;
-        max-width: 90vw;
-    }
-    form input {
-        width: 80%;
-    }
-    #welcomeWrapper #header {
-        font-size: 20px;
-    }
-    .expandedButton {
-        height: 500px !important;
-    }
-    #contactWrapper #emailButton {
-        margin-top: 200px;
+    #navOptions li:after {
+        bottom: -5px;
     }
 }
 @media (max-width: 400px) {
@@ -330,31 +91,4 @@ body {
     #navOptions {
         margin: 0px;
     }
-    #welcomeWrapper #header {
-        display: none;
-    }
-    #advancedImageContainer {
-        margin: 0px !important;
-        display: block;
-        height: 100vw;
-    }
-    #advancedImageContainer img {
-        width: 100vw;
-        max-width: 100vw;
-        box-shadow: none;
-    }
-    .detail {
-        display: none;
-    }
-    #description {
-        display: none;
-    }
-    #contactWrapper form input {
-        width: 80vw;
-    }
-    #contactWrapper #emailButton {
-        margin-top: 250px;
-    }
 }
-
-/*Media Queries End*/

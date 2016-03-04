@@ -1,13 +1,16 @@
 extends layout
 
+block prepend head
+    link(rel="stylesheet" href="/stylesheets/images.css")
+    link(rel="stylesheet" href="/stylesheets/portfolio.css")
+
 block content
-    div#portfolioWrapper
-        div#description
-            p#enlarge Click image to enlarge
-        section#photos
-            each image, i in images
-                div(onclick="enlargePicture(this)")#advancedImageContainer
-                    img(src="images/portfolio/#{image}")
+    div#description
+        p#enlarge Click image to enlarge
+    section#photos
+        each image, i in images
+            div(onclick="enlargePicture(this)")#advancedImageContainer
+                img(src="images/portfolio/#{image}")
                     
 block append scripts
     script(src='/javascripts/enlargeImage.js')    

@@ -8,11 +8,11 @@ html
   body
     div.nav
         ul#navOptions
-            li(onclick="window.location.href='/'") home
-            li(onclick="window.location.href='/portfolio'") portfolio
-            li(onclick="window.location.href='/recent'") recent
-            li(onclick="window.location.href='/about'") about me
-            li(onclick="window.location.href='/contact'") contact me
+            li(onclick="window.location.href='/'", id="home") home
+            li(onclick="window.location.href='/portfolio'", id="portfolio") portfolio
+            li(onclick="window.location.href='/recent'", id="recent") recent
+            li(onclick="window.location.href='/about'", id="about") about me
+            li(onclick="window.location.href='/contact'", id="contact") contact me
     block content
     
 block scripts

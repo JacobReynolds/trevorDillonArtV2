@@ -1,11 +1,14 @@
 extends layout
 
+block prepend head
+    link(rel="stylesheet" href="/stylesheets/images.css")
+    link(rel="stylesheet" href="/stylesheets/recent.css")
+
 block content
-    div#recentWrapper
-        div#description
-            p Hover for description
-            p#enlarge Click image to enlarge
-        section#photos
+    div#description
+        p Hover for description
+        p#enlarge Click image to enlarge
+    section#photos
 block append scripts
     script(src='/javascripts/enlargeImage.js')
     script(src='/javascripts/recent.js')

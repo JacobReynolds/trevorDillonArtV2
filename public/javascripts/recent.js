@@ -21,7 +21,7 @@ function loadInsta() {
 
 function parseImages(images) {
     images.forEach(function (image) {
-        $('#recentWrapper #photos').append('<div id="advancedImageContainer" onclick="enlargePicture(this);"><div class="detail">' + image.description + '</div><img src="' + image.url + '"/></div>');
+        $('#photos').append('<div id="advancedImageContainer" onclick="enlargePicture(this);"><div class="detail">' + image.description + '</div><img src="' + image.url + '"/></div>');
     })
 
     //A call for enlargeImage.js

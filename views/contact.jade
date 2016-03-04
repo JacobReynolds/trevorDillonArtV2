@@ -1,16 +1,18 @@
 extends layout
 
+block prepend head
+    link(rel="stylesheet", href="/stylesheets/build/contact.css")
+    
 block content
-    div#contactWrapper
-        div#emailButton()
-            #slidingUnderline
-                h2(style='margin: 0px') Contact me
+    div#email
+        #slidingUnderline
+            h2(style='margin: 0px') Contact me
+        br
+        br
+        form(method="post" action="/sendEmail")
+            input(type='text', pattern="^[a-zA-Z,.'-]+[ ]*[ a-z,.'-]*$", name='name', placeholder='Your Name', autofocus)
+            input(type='email', name='email', placeholder='Your Email', required='')
             br
+            textarea(height='200px', name="body", placeholder='Hey Trevor!', required='')
             br
-            form(method="post" action="/sendEmail")
-                input(type='text', pattern="^[a-zA-Z,.'-]+[ ]*[ a-z,.'-]*$", name='name', placeholder='Your Name', autofocus)
-                input(type='email', name='email', placeholder='Your Email', required='')
-                br
-                textarea(height='200px', name="body", placeholder='Hey Trevor!', required='')
-                br
-                button(type='submit') Send
+            button(type='submit') Send

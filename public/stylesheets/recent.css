@@ -1,0 +1,21 @@
+#photos {
+    text-align: center;
+}
+.detail {
+    position: absolute;
+    /*Calculating for padding*/
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    background: rgba(0, 0, 0, .5);
+    color: white;
+    opacity: 0;
+    padding: 10px;
+    transition: all .5s ease;
+}
+.detail:hover {
+    opacity: 1;
+}
+#description {
+    color: white;
+    text-align: center;
+}

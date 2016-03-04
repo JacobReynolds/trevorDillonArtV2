@@ -1,0 +1,104 @@
+body {
+    /*Background override since IE doesn't support linear-gradient for backgrounds*/
+    background: url(/images/background-min1366.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background-min1366.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+    top: 0px;
+    position: absolute;
+}
+#email {
+    min-height: 500px;
+    max-width: 500px;
+    margin-bottom: 30px;
+    border: none;
+    background: rgba(79, 0, 0, .5);
+    border-radius: 15px;
+    color: white;
+    padding-top: 20px;
+    transition: all .5s ease;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+#slidingUnderline {
+    position: relative;
+    color: white;
+}
+#slidingUnderline:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    content: "";
+    transition: width 0.2s;
+}
+button:focus {
+    outline: 0;
+}
+form textarea {
+    background: rgba(56, 56, 56, .5);
+    border: none;
+    resize: none;
+    height: 300px;
+    width: 80%;
+    color: white;
+    margin: 10px;
+    font-size: 20px;
+    padding: 0px;
+}
+form input {
+    border: none;
+    color: white;
+    margin: 10px;
+    background: rgba(56, 56, 56, .5);
+    width: 40%;
+    font-size: 24px;
+}
+input:focus {
+    outline: 0;
+}
+textarea:focus {
+    outline: 0;
+}
+form button {
+    border: none;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+    width: 150px;
+    background: #dff0d8;
+    color: black;
+    transition: all .5s ease;
+}
+form button:hover {
+    background: #B3F090;
+}
+@media (max-width: 600px) {
+    form input {
+        width: 80%;
+    }
+    #contactWrapper #email {
+        margin-top: 200px;
+    }
+    #email {
+        width: 90vw;
+    }
+}
+@media (max-width: 400px) {
+    #email {
+        border-radius: 0px;
+        margin: 0px;
+        width: 100vw;
+    }
+}
