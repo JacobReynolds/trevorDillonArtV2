@@ -40,7 +40,7 @@ body {
     display: block;
     position: relative;
     left: 0;
-    bottom: -10px;
+    bottom: -7px;
     width: 0;
     height: 5px;
     background-color: white;
@@ -78,7 +78,6 @@ body {
         height: 40px;
         line-height: 40px;
         padding: 0px;
-        padding-left: 5px;
         margin: 0px;
     }
     #navOptions li:hover:after {
@@ -90,5 +89,8 @@ body {
     }
     #navOptions {
         margin: 0px;
+    }
+    #navOptions li.active:after {
+        width: calc(100% + 10px);
     }
 }

@@ -57,6 +57,9 @@ body {
     border-radius: 0px;
     overflow: visible;
 }
+#navOptions li:after {
+    bottom: -10px;
+}
 #navOptions li:hover {
     width: calc(100vw - 20px);
     font-size: 60px;
