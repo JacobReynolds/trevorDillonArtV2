@@ -5,6 +5,7 @@ var util = require('util');
 var crypto = require('crypto');
 var formidable = require('formidable');
 var nodemailer = require('nodemailer');
+var imageReturnAmount = 10;
 //Temp password until prod release
 var password = process.env.LOGIN_PASSWORD;
 portfolioPath = process.env.OPENSHIFT_DATA_DIR + '/portfolio/';
@@ -59,14 +60,31 @@ var generateKey = function () {
 };
 
 router.get('/portfolio', function (req, res) {
+    var start = 0;
+    var end = start + 10;
+    if (req.query.amount) {
+        start = req.query.amount - 10;
+        end = req.query.amount;
+    }
+    var portfolioResult = [];
     fs.readdir(portfolioPath, function (err, result) {
         if (err) {
             console.error(err);
-            result = [];
+            portfolioResult = [];
+        } else {
+            for (var i = start; i < end; i++) {
+                if (result[i]) {
+                    portfolioResult.push(result[i]);
+                }
+            }
+            if (req.query.amount) {
+                res.send(portfolioResult);
+            } else {
+                res.render('portfolio', {
+                    'images': portfolioResult
+                })
+            }
         }
-        res.render('portfolio', {
-            'images': result
-        })
     })
 });
 

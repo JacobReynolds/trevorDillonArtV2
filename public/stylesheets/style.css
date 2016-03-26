@@ -2,12 +2,12 @@ html {
     margin: 0px;
     padding: 0px;
     background: #272727;
-    font-family: 'Times new roman', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 body {
     margin: 0px;
     padding: 0px;
-    font-family: 'Times new roman', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .nav {
     height: auto;
@@ -18,7 +18,7 @@ body {
     z-index: 1000;
     font-size: 20px;
 }
-#navOptions {
+#navOptions { 
     color: white;
     background: rgba(79, 0, 0, .5);
     list-style-type: none;

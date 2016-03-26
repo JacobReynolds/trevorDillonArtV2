@@ -11,8 +11,11 @@ block content
         each image, i in images
             div(onclick="enlargePicture(this)")#advancedImageContainer
                 img(src="images/portfolio/#{image}")
+    div#loadWrapper
+        button(onclick="loadMore()")#loadButton load more
                     
 block append scripts
     script(src='/javascripts/enlargeImage.js')    
+    script(src='/javascripts/portfolio.js')
     script.
         setImageDimensions()
