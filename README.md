@@ -11,4 +11,4 @@ This app supports
   * Contact form for communication (TBA)
 
 
-This app is currently under UI development.  Most of the server implementation is finished and in the final stages of being wrapped up.  To see a demo environment of this application please go <a target="_blank" href="http://trevordillonart-trevorportfolio.rhcloud.com">here</a>.
+This app is currently under UI development.  Most of the server implementation is finished and in the final stages of being wrapped up.  To see a demo environment of this application please go <a target="_blank" href="http://trevordillonart.com">here</a>.
