@@ -19,3 +19,12 @@ p {
 a {
     color: white;
 }
+#portfolioPictureWrapper {
+    margin-top: 20px;
+    text-align: center;
+}
+#portfolioPicture {
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+}

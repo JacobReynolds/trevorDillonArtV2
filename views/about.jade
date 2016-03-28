@@ -5,6 +5,8 @@ block prepend head
     
 block content
     div#aboutWrapper
+        div#portfolioPictureWrapper
+            img(id="portfolioPicture")
         h1 About me
         p
             |Hi! I’m a 21 year old artist, musician, and motorcycle enthusiast. I started my apprenticeship in 2013 at Brass Knuckle Tattoo Studio in Uptown Minneapolis. I enjoy doing all styles and sizes of tattoos but prefer medium to large color tattoos in illustrative, neo-traditional, traditional, and new school styles. I love tattooing nature, animals, water, and traditional imagery in my style.
@@ -13,3 +15,5 @@ block content
             |To contact me for a tattoo you can email me 
             a(href="/contact") here
             |&nbsp;for a consultation, call the shop at (612) 871-4249 for a consultation, or come into the shop with a $40 deposit to hold an appointment. Thank you for looking!
+block append scripts
+    script(src='/javascripts/about.js')
