@@ -35,3 +35,15 @@ function updateImageOrder() {
         }
     })
 }
+
+function removeImage(button, imageId) {
+    $.post({
+        url: '/removeImage',
+        data: {
+            imageId: imageId
+        },
+        success: function () {
+            $(button).parent().remove();
+        }
+    })
+}

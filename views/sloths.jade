@@ -16,9 +16,7 @@ block content
             each image, i in images
                 li#editImageContainer
                     img(src="images/portfolio/#{image}", id="#{image}").editImage
-                    form#removeImage(name="removeimage",method="post",action="/removeimage")
-                        input#removeImage(type="text", placeholder="image", name="imageId", value="#{image}", style="display: none")
-                        button#btnSubmit(type="submit") remove
+                    button#btnSubmit(onclick="removeImage(this, #{image});") remove
 
 block append scripts
     script(src='//code.jquery.com/ui/jquery-ui-git.js')
