@@ -2,6 +2,7 @@ extend layout
 
 block append head
     link(rel="stylesheet" href="/stylesheets/build/edit.css")
+    link(rel="stylesheet" href="//code.jquery.com/ui/jquery-ui-git.css")
     
 block content
     div#slothWrapper
@@ -11,16 +12,14 @@ block content
                 button(type="submit") submit
         br
         br
-        section#photos.sortable
+        ul#photos.sortable
             each image, i in images
-                div#editImageContainer
+                li#editImageContainer
                     img(src="images/portfolio/#{image}", id="#{image}").editImage
                     form#removeImage(name="removeimage",method="post",action="/removeimage")
                         input#removeImage(type="text", placeholder="image", name="imageId", value="#{image}", style="display: none")
                         button#btnSubmit(type="submit") remove
 
 block append scripts
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js')
-    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
-    script(src='/javascripts/jquery-sortable-photos.js')
+    script(src='//code.jquery.com/ui/jquery-ui-git.js')
     script(src='/javascripts/sloths.js')

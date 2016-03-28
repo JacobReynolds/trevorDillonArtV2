@@ -16,6 +16,14 @@ body {
     vertical-align: top;
     width: auto;
 }
+#editImageContainerPlaceholder {
+    width: 200px;
+    height: 200px;
+    border: dotted 2px white;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
 #editImageContainer button {
     position: absolute;
     bottom: 5px;

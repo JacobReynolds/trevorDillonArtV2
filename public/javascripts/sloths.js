@@ -1,11 +1,21 @@
 $(document).ready(function () {
-    $('.sortable').sortablePhotos({
-        selector: '> #editImageContainer',
-        sortable: true,
-        padding: 2,
-        afterDrop: function () {
+
+    $('.sortable').sortable({
+        start: function (event, ui) {
+            clone = $(ui.item[0].outerHTML).clone();
+        },
+        placeholder: {
+            element: function (clone, ui) {
+                return $('<li id="editImageContainerPlaceholder"></li>');
+            },
+            update: function () {
+                return;
+            }
+        },
+        stop: function () {
             updateImageOrder();
         }
+
     });
 })
 
@@ -19,7 +29,7 @@ function updateImageOrder() {
         contentType: 'application/json',
         success: function (ids) {
             var images = $('.editImage').get();
-            images.forEach(function(image, index) {
+            images.forEach(function (image, index) {
                 $(image).attr('id', ids[index]);
             })
         }
