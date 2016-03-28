@@ -8,7 +8,10 @@ This app supports
   
   * Admin page with portfolio image sorting
   
-  * Contact form for communication (TBA)
+  * Contact form for communication
 
+  * Dynamic 'About Me' Facebook profile picture
 
-This app is currently under UI development.  Most of the server implementation is finished and in the final stages of being wrapped up.  To see a demo environment of this application please go <a target="_blank" href="http://trevordillonart.com">here</a>.
+  * Instagram polling for latest images
+
+To see the environment for this application please go <a target="_blank" href="http://trevordillonart.com">here</a>.
