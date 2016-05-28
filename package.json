@@ -18,6 +18,8 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "formidable": "1.0.17",
+    "google-auth-library": "^0.9.8",
+    "googleapis": "^7.1.0",
     "jade": "~1.11.0",
     "nodemailer": "^0.7.1",
     "serve-favicon": "~2.3.0"
