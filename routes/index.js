@@ -214,7 +214,7 @@ router.post('/sendEmail', function (req, res) {
 })
 
 function sendEmail(name, replyTo, body) {
-	var to = 'trevordillonart@gmail.com';
+	var to = 'trevordillontattoos@gmail.com';
 	//for prod health checks
 	if (replyTo === 'jreynoldsdev@gmail.com') {
 		to = replyTo;
