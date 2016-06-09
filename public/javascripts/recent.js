@@ -12,7 +12,7 @@ function loadInsta() {
 			parseImages(data.data.map(function (x) {
 				return {
 					url: x.images.standard_resolution.url,
-					description: x.caption.text
+					description: (x.caption && x.caption.text) || ''
 				};
 			}));
 		}
