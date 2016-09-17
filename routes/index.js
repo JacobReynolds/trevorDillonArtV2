@@ -48,6 +48,19 @@ router.get('/sloths', function (req, res) {
 	}
 });
 
+router.post('/updateBiography', function (req, res) {
+	var cookie = req.cookies[sessionCookieName];
+	if (!verifySessionId(cookie)) {
+		res.redirect('login');
+	} else {
+		fs.writeFile("views/aboutStatic.html", req.body.biography, function (err) {
+			if (err) {
+				return console.log(err);
+			}
+		});
+	}
+});
+
 
 function verifySessionId(cookie) {
 	return sessionKeys.indexOf(cookie) > -1;
@@ -92,8 +105,25 @@ router.get('/recent', function (req, res) {
 	res.render('recent')
 });
 
+router.get('/aboutStatic', function (req, res) {
+	fs = require('fs');
+	fs.readFile('views/aboutStatic.html', 'utf8', function (err, data) {
+		if (err) {
+			return console.log(err);
+		}
+		res.send(data);
+	});
+});
+
 router.get('/about', function (req, res) {
-	res.render('about')
+	fs.readFile('views/aboutStatic.html', 'utf8', function (err, data) {
+		if (err) {
+			return console.log(err);
+		}
+		res.render('about', {
+			'biography': data
+		})
+	});
 });
 
 router.get('/getPortfolio', function (req, res) {

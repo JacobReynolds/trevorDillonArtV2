@@ -6,12 +6,19 @@ block append head
     
 block content
     div#slothWrapper
+        h1(style="color:white") Update biography
+        textarea#biography
+        button#bioSubmit(onclick="updateBiography()") Save Biography
+        span#success Success!
+        span#error Error!
+        h1(style="color:white") Upload photo
         div#uploadForm
             form(action="/upload", method="post", enctype="multipart/form-data")
                 input(type="file", name="displayImage",  multiple="multiple", accept="image/*")
                 button(type="submit") submit
         br
         br
+        h1(style="color:white") Sort photos
         ul#photos.sortable
             each image, i in images
                 li#editImageContainer
@@ -19,5 +26,6 @@ block content
                     button#btnSubmit(onclick="removeImage(this, #{image});") remove
 
 block append scripts
+    script(src='//cdn.tinymce.com/4/tinymce.min.js')
     script(src='//code.jquery.com/ui/jquery-ui-git.js')
     script(src='/javascripts/sloths.js')
