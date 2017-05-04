@@ -2,6 +2,7 @@ var fs = require('fs');
 var readline = require('readline');
 var google = require('googleapis');
 var googleAuth = require('google-auth-library');
+console.log(process.env)
 var TOKEN_DIR = process.env.OPENSHIFT_DATA_DIR + '/.credentials/';
 if (process.env.NODE_ENV === 'debug') {
 	TOKEN_DIR = './.credentials/';
